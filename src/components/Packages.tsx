@@ -4,7 +4,7 @@ import SilverPackage from "@/components/Silverpackages";
 import PlatinumPackage from "@/components/Platinumpackages";
 import GoldPackage from "@/components/Goldpackage";
 import DiamondPackage from "@/components/Diamondpackage";
-import AddRate from "@/components/Addrate";
+import AddRate from "@/components/AddRate";
 
 const Packages = () => {
   return (
