@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Play } from "lucide-react"; // play icon
-import videos from "@/data/Advertisementvedios.json"; // Import JSON file
+import videos from "@/data/advertisementvedios.json"; // Import JSON file
 
 const AdvertisementVideos = () => {
   const [playingIndex, setPlayingIndex] = useState<number | null>(null);
