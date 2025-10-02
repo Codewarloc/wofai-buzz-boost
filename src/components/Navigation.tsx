@@ -5,10 +5,10 @@ import { Menu, X } from "lucide-react";
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const scrollToSection = (sectionId: string) => {
+  const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
     setIsOpen(false);
   };
@@ -17,28 +17,51 @@ const Navigation = () => {
     <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-md border-b border-border z-50">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          <div className="text-2xl font-bold text-primary cursor-pointer" onClick={() => scrollToSection('hero')}>
+          {/* Logo */}
+          <div
+            className="text-2xl font-bold text-primary cursor-pointer"
+            onClick={() => scrollToSection("hero")}
+          >
             Wofai Agency
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
-            <button onClick={() => scrollToSection('home')} className="text-foreground hover:text-primary transition-colors">
+            <button
+              onClick={() => scrollToSection("home")}
+              className="text-foreground hover:text-primary transition-colors"
+            >
               Home
             </button>
-            <button onClick={() => scrollToSection('services')} className="text-foreground hover:text-primary transition-colors">
+            <button
+              onClick={() => scrollToSection("services")}
+              className="text-foreground hover:text-primary transition-colors"
+            >
               Services
             </button>
-            <button onClick={() => scrollToSection('about')} className="text-foreground hover:text-primary transition-colors">
+            <button
+              onClick={() => scrollToSection("about")}
+              className="text-foreground hover:text-primary transition-colors"
+            >
               About
             </button>
-            <button onClick={() => scrollToSection('contact')} className="text-foreground hover:text-primary transition-colors">
+            <button
+              onClick={() => scrollToSection("packages")}
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              Packages
+            </button>
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="text-foreground hover:text-primary transition-colors"
+            >
               Contact
             </button>
           </div>
 
+          {/* Desktop CTA */}
           <div className="hidden md:block">
-            <Button onClick={() => scrollToSection('contact')} variant="default">
+            <Button onClick={() => scrollToSection("contact")} variant="default">
               Get Started
             </Button>
           </div>
@@ -58,19 +81,37 @@ const Navigation = () => {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden py-4 space-y-4">
-            <button onClick={() => scrollToSection('home')} className="block w-full text-left text-foreground hover:text-primary transition-colors">
+            <button
+              onClick={() => scrollToSection("home")}
+              className="block w-full text-left text-foreground hover:text-primary transition-colors"
+            >
               Home
             </button>
-            <button onClick={() => scrollToSection('services')} className="block w-full text-left text-foreground hover:text-primary transition-colors">
+            <button
+              onClick={() => scrollToSection("services")}
+              className="block w-full text-left text-foreground hover:text-primary transition-colors"
+            >
               Services
             </button>
-            <button onClick={() => scrollToSection('about')} className="block w-full text-left text-foreground hover:text-primary transition-colors">
+            <button
+              onClick={() => scrollToSection("about")}
+              className="block w-full text-left text-foreground hover:text-primary transition-colors"
+            >
               About
             </button>
-            <button onClick={() => scrollToSection('contact')} className="block w-full text-left text-foreground hover:text-primary transition-colors">
+            <button
+              onClick={() => scrollToSection("packages")}
+              className="block w-full text-left text-foreground hover:text-primary transition-colors"
+            >
+              Packages
+            </button>
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="block w-full text-left text-foreground hover:text-primary transition-colors"
+            >
               Contact
             </button>
-            <Button onClick={() => scrollToSection('contact')} className="w-full mt-4">
+            <Button onClick={() => scrollToSection("contact")} className="w-full mt-4">
               Get Started
             </Button>
           </div>
