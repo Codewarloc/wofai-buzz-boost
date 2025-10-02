@@ -3,15 +3,35 @@ import { motion } from "framer-motion";
 
 const packages = [
   { name: "A day", price: "₦5,500", desc: "Quick boost for a single day" },
-  { name: "Foreign Audience Starter Pack (1 week)", price: "₦75,000", desc: "Reach new international audiences" },
-  { name: "Silver Package (1 week)", price: "₦100,000", desc: "Solid performance with great ROI" },
-  { name: "Platinum Package (1 week)", price: "₦150,000", desc: "Premium exposure with higher reach" },
-  { name: "Gold Package (1 week)", price: "₦200,000", desc: "Top-tier performance and visibility", highlight: true },
+  {
+    name: "Foreign Audience Starter Pack (1 week)",
+    price: "₦75,000",
+    desc: "Reach new international audiences",
+  },
+  {
+    name: "Silver Package (1 week)",
+    price: "₦100,000",
+    desc: "Solid performance with great ROI",
+  },
+  {
+    name: "Platinum Package (1 week)",
+    price: "₦150,000",
+    desc: "Premium exposure with higher reach",
+  },
+  {
+    name: "Gold Package (1 week)",
+    price: "₦200,000",
+    desc: "Top-tier performance and visibility",
+    highlight: true,
+  },
 ];
 
 const AddRate = () => {
   return (
-    <section className="py-16 bg-gradient-to-br from-yellow-50 to-yellow-100" id="rates">
+    <section
+      className="py-16 bg-gradient-to-br from-yellow-50 to-yellow-100 dark:from-gray-950 dark:to-gray-900"
+      id="rates"
+    >
       <div className="container mx-auto px-4 text-center">
         {/* Title */}
         <motion.h2
@@ -19,9 +39,9 @@ const AddRate = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold text-yellow-900 mb-12"
+          className="text-3xl md:text-4xl font-bold text-yellow-900 dark:text-yellow-400 mb-12"
         >
-          Our Add Rates
+          Our Ad Rates
         </motion.h2>
 
         {/* Grid of Packages */}
@@ -36,8 +56,8 @@ const AddRate = () => {
               className={`relative p-6 rounded-2xl shadow-lg border transition-all cursor-pointer 
                 ${
                   pkg.highlight
-                    ? "bg-gradient-to-br from-yellow-200 via-yellow-100 to-white border-yellow-400 shadow-xl hover:shadow-2xl hover:-translate-y-3"
-                    : "bg-white border-yellow-200 hover:shadow-xl hover:-translate-y-2"
+                    ? "bg-gradient-to-br from-yellow-200 via-yellow-100 to-white dark:from-yellow-900 dark:via-yellow-800 dark:to-gray-900 border-yellow-400 shadow-xl hover:shadow-2xl hover:-translate-y-3"
+                    : "bg-white dark:bg-gray-800 border-yellow-200 dark:border-gray-700 hover:shadow-xl hover:-translate-y-2"
                 }`}
             >
               {/* Highlight Badge */}
@@ -49,19 +69,25 @@ const AddRate = () => {
 
               <h3
                 className={`text-xl font-semibold mb-2 ${
-                  pkg.highlight ? "text-yellow-900" : "text-yellow-800"
+                  pkg.highlight
+                    ? "text-yellow-900 dark:text-yellow-300"
+                    : "text-yellow-800 dark:text-yellow-400"
                 }`}
               >
                 {pkg.name}
               </h3>
               <p
                 className={`text-2xl font-bold mb-4 ${
-                  pkg.highlight ? "text-yellow-700" : "text-yellow-600"
+                  pkg.highlight
+                    ? "text-yellow-700 dark:text-yellow-200"
+                    : "text-yellow-600 dark:text-yellow-300"
                 }`}
               >
                 {pkg.price}
               </p>
-              <p className="text-gray-600 text-sm">{pkg.desc}</p>
+              <p className="text-gray-600 dark:text-gray-400 text-sm">
+                {pkg.desc}
+              </p>
             </motion.div>
           ))}
         </div>

@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import ThemeToggle from "@/components/Themetoggle";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const scrollToSection = (sectionId) => {
+  const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -26,7 +27,7 @@ const Navigation = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-8 items-center">
             <button
               onClick={() => scrollToSection("home")}
               className="text-foreground hover:text-primary transition-colors"
@@ -59,9 +60,13 @@ const Navigation = () => {
             </button>
           </div>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:block">
-            <Button onClick={() => scrollToSection("contact")} variant="default">
+          {/* Desktop CTA + Theme Toggle */}
+          <div className="hidden md:flex items-center space-x-4">
+            <ThemeToggle />
+            <Button
+              onClick={() => scrollToSection("contact")}
+              variant="default"
+            >
               Get Started
             </Button>
           </div>
@@ -111,7 +116,14 @@ const Navigation = () => {
             >
               Contact
             </button>
-            <Button onClick={() => scrollToSection("contact")} className="w-full mt-4">
+
+            {/* Theme toggle for mobile */}
+            <ThemeToggle />
+
+            <Button
+              onClick={() => scrollToSection("contact")}
+              className="w-full mt-4"
+            >
               Get Started
             </Button>
           </div>

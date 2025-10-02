@@ -15,12 +15,45 @@ const Contact = () => {
   });
   const { toast } = useToast();
 
+  const isMobile = () => /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your interest. I'll get back to you within 24 hours.",
-    });
+
+    const phoneNumber = "2347039447471"; // your WhatsApp number in international format
+    const text = `Hello Wofai Agency! 👋
+
+Name: ${formData.name}
+Email: ${formData.email}
+Business: ${formData.business}
+Message: ${formData.message}`;
+
+    const encodedText = encodeURIComponent(text);
+
+    // WhatsApp links
+    const url = isMobile()
+      ? `https://wa.me/${phoneNumber}?text=${encodedText}`
+      : `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodedText}`;
+
+    // ✅ Try opening WhatsApp
+    const newWindow = window.open(url, "_blank");
+
+    if (!newWindow || newWindow.closed || typeof newWindow.closed === "undefined") {
+      // ❌ WhatsApp blocked → fallback to email
+      const mailto = `mailto:wofai@advertisementagency.com?subject=New Contact Request&body=${encodedText}`;
+      window.location.href = mailto;
+
+      toast({
+        title: "Fallback to Email",
+        description: "WhatsApp not available. Opening your email app instead.",
+      });
+    } else {
+      toast({
+        title: "Redirecting to WhatsApp...",
+        description: "Your message will open in WhatsApp.",
+      });
+    }
+
     setFormData({ name: "", email: "", business: "", message: "" });
   };
 
@@ -51,49 +84,41 @@ const Contact = () => {
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <Input
-                    placeholder="Your Name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full"
-                  />
-                </div>
-                <div>
-                  <Input
-                    type="email"
-                    placeholder="Your Email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full"
-                  />
-                </div>
-                <div>
-                  <Input
-                    placeholder="Your Business Name"
-                    name="business"
-                    value={formData.business}
-                    onChange={handleChange}
-                    className="w-full"
-                  />
-                </div>
-                <div>
-                  <Textarea
-                    placeholder="Tell me about your advertising goals and how I can help..."
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={5}
-                    className="w-full"
-                  />
-                </div>
+                <Input
+                  placeholder="Your Name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full"
+                />
+                <Input
+                  type="email"
+                  placeholder="Your Email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full"
+                />
+                <Input
+                  placeholder="Your Business Name"
+                  name="business"
+                  value={formData.business}
+                  onChange={handleChange}
+                  className="w-full"
+                />
+                <Textarea
+                  placeholder="Tell me about your advertising goals and how I can help..."
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={5}
+                  className="w-full"
+                />
                 <Button type="submit" className="w-full" size="lg">
-                  Send Message
+                  Send via WhatsApp
                   <Send className="ml-2 h-4 w-4" />
                 </Button>
               </form>
@@ -124,7 +149,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">Phone</h3>
-                    <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                    <p className="text-muted-foreground">+234 901 234 5678</p>
                   </div>
                 </div>
               </CardContent>

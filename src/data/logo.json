@@ -1,0 +1,11 @@
+{
+    "clients": [
+      { "id": 1, "logo": "/images/logo1.jpg", "name": "Client 1" },
+      { "id": 2, "logo": "/images/logo2.jpg", "name": "Client 2" },
+      { "id": 3, "logo": "/images/logo3.jpg", "name": "Client 3" },
+      { "id": 4, "logo": "/images/logo4.jpg", "name": "Client 4" },
+      { "id": 5, "logo": "/images/logo5.jpg", "name": "Client 5" },
+      { "id": 6, "logo": "/images/logo6.jpg", "name": "Client 6" }
+    ]
+  }
+  

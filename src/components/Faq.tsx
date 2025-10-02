@@ -11,12 +11,24 @@ const FAQ = () => {
     },
     {
       question: "How long does it take to see results?",
-      answer: "You can start seeing engagement within the first 48 hours of campaign launch."
+      answer: "Less than 24hrs before your ad will start running and distributing"
     },
     {
-      question: "Do you provide custom campaigns?",
-      answer: "Yes! We tailor campaigns based on your brand goals and target audience."
+      question: "What do I need to run a sponsored advert?",
+      answer: "You need a business page on facebook or instagram (optional) An active business WhatsApp number Your ad content(pictures or video of what you sell or device you render)"
+    },
+
+    {
+        question: "Can sponsored ads run any type of business ?",
+        answer: "yes except fraudulent and sexual adverts are not allowed"
+    },
+
+    {
+        question: "Will I make sales with sponsored ads?",
+        answer: "Yes you will make sales when you advertised your business through sponsored ads on Facebook,Instagram and TikTok"
     }
+
+
   ];
 
   const [openIndex, setOpenIndex] = useState<number | null>(null);
