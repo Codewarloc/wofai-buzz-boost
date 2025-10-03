@@ -14,10 +14,10 @@ const Footer = () => {
               Helping businesses grow through strategic Facebook and Instagram advertising campaigns.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-secondary transition-colors">
+              <a href="https://www.facebook.com/profile.php?id=61559854397185&mibextid=wwXIfr&mibextid=wwXIfr" className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-secondary transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-secondary transition-colors">
+              <a href="https://www.instagram.com/wofaionlineadverts?igsh=MXVmbHRlMjZzYXRiOQ%3D%3D&utm_source=qr" className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-secondary transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
             </div>
@@ -56,11 +56,11 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-secondary" />
-                <span className="text-primary-foreground/80">wofai@advertisementagency.com</span>
+                <span className="text-primary-foreground/80">blessingit87@yahoo.com</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-secondary" />
-                <span className="text-primary-foreground/80">+1 (555) 123-4567</span>
+                <span className="text-primary-foreground/80">+234-703-944-7471</span>
               </div>
             </div>
           </div>

@@ -135,7 +135,7 @@ Message: ${formData.message}`;
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">Email</h3>
-                    <p className="text-muted-foreground">wofai@advertisementagency.com</p>
+                    <p className="text-muted-foreground">blessingit87@yahoo.com</p>
                   </div>
                 </div>
               </CardContent>
@@ -149,7 +149,7 @@ Message: ${formData.message}`;
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">Phone</h3>
-                    <p className="text-muted-foreground">+234 901 234 5678</p>
+                    <p className="text-muted-foreground">+234-703-944-7471</p>
                   </div>
                 </div>
               </CardContent>

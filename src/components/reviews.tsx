@@ -13,7 +13,7 @@ const reviews = [
     name: "AMA BEAUTY CARE",
     role: "Startup Founder",
     review:
-      "God afternoon sis i want to share your number to something They just they like my add and voice over",
+      "I want to share your number With someone,they like my ad and voice over",
   },
   {
     name: "Sarah Johnson",
